@@ -26,7 +26,7 @@ end
 
 local Library = {
 	scale_cooldown = false :: boolean,
-	open = false :: boolean, -- Inicialmente fechado
+	open = true :: boolean,
 	flags = {} :: any,
 	ui = nil :: any,
 	scale = 0,
@@ -39,18 +39,6 @@ local Library = {
 	can_be_optimized = false :: boolean
 }
 
--- Função para alternar a visibilidade da GUI
-local function toggleUI()
-	Library.open = not Library.open
-	Library.ui.Visible = Library.open
-end
-
--- Detectar quando o Control direito é pressionado
-UserInputService.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.RightControl then
-		toggleUI()
-	end
-end)
 
 local ConfigsController = {}
 
@@ -124,7 +112,6 @@ function UIManager.refresh_tabs(Tab: TextButton)
 	end
 end
 
-
 function UIManager.refresh_sections(right_section: ScrollingFrame, left_section: ScrollingFrame)
 	for _, object in Library.ui.Background.Sections:GetChildren() do
 		if object == left_section or object == right_section then
@@ -196,7 +183,7 @@ function Library.normalize_size()
 		}):Play()
 
 		task.delay(0.6, function()
-			Library.ui.Enabled = false
+			Library.ui.Enabled = false 
 		end)
 
 		task.delay(1, function()
