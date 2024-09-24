@@ -6,7 +6,7 @@ local RunService = cloneref(game:GetService('RunService'))
 local Players = cloneref(game:GetService('Players'))
 local Debris = cloneref(game:GetService('Debris'))
 
-local LocalPlayer = Players.LocalPlayer
+local LocalPlayer = Players.LocalPlayer true
 local mouse = LocalPlayer:GetMouse()
 
 local Connections = {}
@@ -26,7 +26,7 @@ end
 
 local Library = {
 	scale_cooldown = false :: boolean,
-	open = true :: boolean,
+	open = false :: boolean,
 	flags = {} :: any,
 	ui = nil :: any,
 	scale = 0,
@@ -115,7 +115,7 @@ end
 function UIManager.refresh_sections(right_section: ScrollingFrame, left_section: ScrollingFrame)
 	for _, object in Library.ui.Background.Sections:GetChildren() do
 		if object == left_section or object == right_section then
-			object.Visible = true
+			object.Visible = false
 
 			continue
 		end
