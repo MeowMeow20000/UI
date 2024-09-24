@@ -1,6 +1,3 @@
-Library.gui.Visible = false
-
-
 local ContextActionService = cloneref(game:GetService('ContextActionService'))
 local UserInputService = cloneref(game:GetService('UserInputService'))
 local TweenService = cloneref(game:GetService('TweenService'))
@@ -29,7 +26,7 @@ end
 
 local Library = {
 	scale_cooldown = false :: boolean,
-	open = true :: boolean,
+	open = false :: boolean, -- Inicialmente fechado
 	flags = {} :: any,
 	ui = nil :: any,
 	scale = 0,
@@ -41,6 +38,19 @@ local Library = {
 	disconnected = false :: boolean,
 	can_be_optimized = false :: boolean
 }
+
+-- Função para alternar a visibilidade da GUI
+local function toggleUI()
+	Library.open = not Library.open
+	Library.ui.Visible = Library.open
+end
+
+-- Detectar quando o Control direito é pressionado
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.RightControl then
+		toggleUI()
+	end
+end)
 
 local ConfigsController = {}
 
