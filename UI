@@ -199,7 +199,7 @@ function Library.normalize_size()
 		Scale = Library.scale
 	}):Play()
 
-	Library.ui.Enabled = false
+	Library.ui.Enabled = true
 
 	task.delay(1, function()
 		Library.scale_cooldown = false
@@ -211,7 +211,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject, event: boolean)
 		return
 	end
 
-	if input.KeyCode ~= Enum.KeyCode.F4 then
+	if input.KeyCode ~= Enum.KeyCode.RightControl then
 		return
 	end
 
