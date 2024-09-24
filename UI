@@ -1,4 +1,4 @@
-Library.ui.Visible = false
+Library.gui.Visible = false
 
 
 local ContextActionService = cloneref(game:GetService('ContextActionService'))
