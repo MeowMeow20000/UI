@@ -26,7 +26,7 @@ end
 
 local Library = {
 	scale_cooldown = false :: boolean,
-	open = false :: boolean,
+	open = true :: boolean,
 	flags = {} :: any,
 	ui = nil :: any,
 	scale = 0,
@@ -162,7 +162,7 @@ function Library:changed()
 end
 
 function Library.normalize_size()	
-	Library.scale_cooldown = false
+	Library.scale_cooldown = true
 
 	task.spawn(function()
 		if Library.disconnected then
