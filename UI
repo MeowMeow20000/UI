@@ -115,7 +115,7 @@ end
 function UIManager.refresh_sections(right_section: ScrollingFrame, left_section: ScrollingFrame)
 	for _, object in Library.ui.Background.Sections:GetChildren() do
 		if object == left_section or object == right_section then
-			object.Visible = false
+			object.Visible = true
 
 			continue
 		end
