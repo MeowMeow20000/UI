@@ -1,3 +1,6 @@
+Library.ui.Visible = false
+
+
 local ContextActionService = cloneref(game:GetService('ContextActionService'))
 local UserInputService = cloneref(game:GetService('UserInputService'))
 local TweenService = cloneref(game:GetService('TweenService'))
@@ -26,7 +29,7 @@ end
 
 local Library = {
 	scale_cooldown = false :: boolean,
-	open = false :: boolean,
+	open = true :: boolean,
 	flags = {} :: any,
 	ui = nil :: any,
 	scale = 0,
@@ -38,7 +41,6 @@ local Library = {
 	disconnected = false :: boolean,
 	can_be_optimized = false :: boolean
 }
-
 
 local ConfigsController = {}
 
@@ -111,6 +113,7 @@ function UIManager.refresh_tabs(Tab: TextButton)
 		end
 	end
 end
+
 
 function UIManager.refresh_sections(right_section: ScrollingFrame, left_section: ScrollingFrame)
 	for _, object in Library.ui.Background.Sections:GetChildren() do
