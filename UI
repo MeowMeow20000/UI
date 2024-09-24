@@ -6,7 +6,7 @@ local RunService = cloneref(game:GetService('RunService'))
 local Players = cloneref(game:GetService('Players'))
 local Debris = cloneref(game:GetService('Debris'))
 
-local LocalPlayer = Players.LocalPlayer true
+local LocalPlayer = Players.LocalPlayer
 local mouse = LocalPlayer:GetMouse()
 
 local Connections = {}
