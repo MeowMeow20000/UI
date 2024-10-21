@@ -7,10 +7,11 @@ local UIStroke = Instance.new("UIStroke")
 ScreenGui.Name = "Roblox"
 ScreenGui.Parent = game.CoreGui
 
+-- Aumentando um pouco o tamanho do Background
 Background.Name = "Background"
 Background.Parent = ScreenGui
-Background.Size = UDim2.new(0, 80, 0, 20)  
-Background.Position = UDim2.new(0.5, -40, 0, 10)
+Background.Size = UDim2.new(0, 120, 0, 30) -- real.
+Background.Position = UDim2.new(0.5, -60, 0, 10)
 Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Background.BackgroundTransparency = 0.3
 
@@ -21,11 +22,12 @@ UIStroke.Thickness = 1
 UIStroke.Color = Color3.fromRGB(60, 0, 90)
 UIStroke.Parent = Background
 
+-- Mantendo o tamanho do TextLabel
 TextLabel.Name = "Label"
 TextLabel.Parent = Background
 TextLabel.Text = "CRITICAL"
 TextLabel.Size = UDim2.new(1, 0, 1, 0)
-TextLabel.Position = UDim2.new(0.5, 0.5, 0.5, 0)
+TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 TextLabel.BackgroundTransparency = 1
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -35,6 +37,7 @@ TextLabel.TextStrokeTransparency = 0.5
 TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextTransparency = 0
 
+-- Sombra do texto
 local TextShadow = Instance.new("TextLabel")
 TextShadow.Name = "TextShadow"
 TextShadow.Parent = Background
